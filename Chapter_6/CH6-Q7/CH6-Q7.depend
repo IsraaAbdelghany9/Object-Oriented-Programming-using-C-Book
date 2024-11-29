@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1732905655 source:c:\users\msi\courses\iti\not in repo\oop study\ch6-q7\main.cpp
+	<iostream>
+	<iomanip>
+	<string.h>
+
