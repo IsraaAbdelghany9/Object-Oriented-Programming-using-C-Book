@@ -1,6 +1,39 @@
 #include <iostream>
+#include <sstream>
 #include <string>
+#include <cstdlib>
 using namespace std;
+
+class date
+{
+    int year;
+    int month;
+    int day;
+
+public:
+    void getdata()
+    {
+        string inputDate;
+        char delimiter;
+
+        cout << "Enter the date (MM/DD/YYYY): ";
+        cin >> inputDate;
+
+        stringstream ss(inputDate);
+        ss >> month >> delimiter >> day >> delimiter >> year;
+
+        if (month < 1 || month > 12 || day < 1 || day > 31 || year < 0)
+        {
+            cout << "Invalid date format!" << endl;
+            exit(1);
+        }
+    }
+    void showdata()
+    {
+        cout << month << "/" << day << "/" << year << endl;
+
+    }
+};
 
 class publication
 {
@@ -23,7 +56,10 @@ public:
 
 };
 
-class book : private publication
+
+
+
+class book : public publication
 {
     int pageCount;
 public:
@@ -41,7 +77,7 @@ public:
     }
 };
 
-class tape : private publication
+class tape : public publication
 {
     float playingTime;
 public:
@@ -77,5 +113,6 @@ int main()
     tape t ;
     t.getdata();
     t.putdata();
+
     return 0;
 }
