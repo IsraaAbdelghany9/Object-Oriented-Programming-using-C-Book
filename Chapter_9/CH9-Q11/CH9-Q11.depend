@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1732953261 source:c:\users\msi\courses\iti\not in repo\object-oriented-programming-using-c-book\chapter_9\ch9-q11\main.cpp
+	<iostream>
+	<cstdlib>
+
