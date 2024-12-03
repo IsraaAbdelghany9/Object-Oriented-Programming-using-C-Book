@@ -20,12 +20,17 @@ public:
     {
         return *(ptr+j);
     }
-    Array operator = (Array &a)
+    Array& operator = (const Array &a)
     {
+        if (this == &a) // Handle self-assignment
+            return *this;
+        delete[] ptr; // Free existing memory
         size_ = a.size_;
-        ptr[size_];
+        ptr = new int[size_];
         for(int j=0; j<size_; j++)
             ptr[j] = a.ptr[j];
+
+        return *this;
     }
 };
 
